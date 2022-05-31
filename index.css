@@ -1,19 +1,28 @@
 * {
     font-size: 62.5%;
 }
-.body{
-   background-color: #808080;
+body{
+   background-color: #4b4b4b;
 }
 
-.container-logo {
-    margin: calc(2em + 1vh);    
-    display: grid;   
-    grid-template-rows: 1fr 3fr 1fr;  
-    height: 95vh;  
+main {
+    margin: calc(2em + 1vh);
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    height: 95vh;
+    justify-content: center;
+    
 }
 
-.logo {   
-   background-color: transparent;
-   height: calc(10em + 1vh);
-   text-align: center;
+.logo {
+    background-color: transparent;
+    height: calc(10 rem + 1vh);
+    width: calc(10 rem 1 vh);
+    text-align: center;
+    transition: all 1s ease-in-out;
+}
+
+.container-logo:hover .logo {
+    transform: scale(1.5);
+    cursor:pointer;
 }
