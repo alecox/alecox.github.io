@@ -1,26 +1,19 @@
 * {
     font-size: 62.5%;
 }
-.body-portada {
-   background-color: dimgrey;
+.body{
+   background-color: #808080;
 }
 
-.portada {
-    
-}
-
-.portada-contenedor {
+.container-logo {
     margin: calc(2em + 1vh);    
     display: grid;   
-    grid-template-rows: 3fr 1fr 1fr 1fr 3fr;  
-    height: 95vh;
-    justify-content: center;
-    align-content: center;
+    grid-template-rows: 1fr 3fr 1fr;  
+    height: 95vh;  
 }
 
-.btn {
-   
+.logo {   
    background-color: transparent;
-   font-size: calc(10em + 1vh);
+   height: calc(10em + 1vh);
    text-align: center;
 }
