@@ -14,15 +14,34 @@ main {
     
 }
 
-.logo {
-    background-color: transparent;
-    height: calc(10 rem + 1vh);
-    width: calc(10 rem 1 vh);
+.container {    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.logo {    
+    height: calc(50vh);
+    width: calc(50vh);
     text-align: center;
     transition: all 1s ease-in-out;
 }
 
-.container-logo:hover .logo {
+.container:hover .logo{
     transform: scale(1.5);
     cursor:pointer;
+}
+
+.btn {
+    display: block;
+    height: calc(5vh);
+    width: calc(20vh);
+    background-color: #808080;
+    font-size: calc(3rem + 1vh);
+    border-radius: 3rem;
+    border: calc(.1rem + .5vh) solid #000;
+    text-decoration:none;
+    color: #fff;
+    text-align:center;
 }
