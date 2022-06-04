@@ -66,11 +66,12 @@ form.addEventListener("submit", (e) => {
 
 /*library.addEventListener("click", (e) => {     
     if (e.target.classList.contains("idem")) {  
-    console.log(e.target)        
-    /*fetch("https://api.themoviedb.org/3/search/movie?api_key=af0e0a76ec3a39a7dc32e7f88e6e6968&language=en-US&query=" + input + "&page=1&")
+           
+    fetch("https://api.themoviedb.org/3/search/movie?api_key=af0e0a76ec3a39a7dc32e7f88e6e6968&language=en-US&query=" + input + "&page=1&")
         .then(response => response.json())
         .then(json => {
             console.log(json);
+            descfilm.innerHTML = "";
             library.innerHTML = "";
             for (let i = 0; i < 20; i++) {
                 var tarjeta = document.createElement("div");
@@ -78,8 +79,11 @@ form.addEventListener("submit", (e) => {
                 var imagen = document.createElement("img");
                 var titulo = document.createElement("h2");
                 var desc = document.createElement("p");
-                var idx = document.createElement("p");
-                tarjeta.classList.add("film-card");
+                var year = document.createElement("p");
+                var puntos = document.createElement("p");
+                var popularidad = document.createElement("p");
+                
+                tarjeta.classList.add("desc-card");
 
                 if (json.results[i].poster_path != null)
                     imagen.src = "https://image.tmdb.org/t/p/w500" + json.results[i].poster_path;
@@ -87,12 +91,17 @@ form.addEventListener("submit", (e) => {
                     imagen.src = "image_not_found.png";
                 titulo.textContent = json.results[i].title;
                 desc.textContent = "Descripcion: " + json.results[i].overview;
-                desc.textContent = "idx: " + json.results[i].id;
+                year.textContent = "Lanzamiento: " + json.results[i].release_date;
+                puntos.textContent = "Puntuacion: " + json.results[i].vote_average;
+                popularidad.textContent = "Popularidad: " + json.results[i].popularity;
 
                 tarjeta.appendChild(ancla);
                 ancla.appendChild(imagen);
                 tarjeta.appendChild(titulo);
-                tarjeta.appendChild(desc);
+                tarjeta.appendChild(year);
+                tarjeta.appendChild(puntos);
+                tarjeta.appendChild(popularidad);
+               
                 library.appendChild(tarjeta);
             }
         })
