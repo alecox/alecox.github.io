@@ -8,21 +8,21 @@ function crear_tarjeta(json) {
         var ancla = document.createElement("div");
         var imagen = document.createElement("img");
         var titulo = document.createElement("h2");
-        var year = document.createElement("p");
+        var desc = document.createElement("p");
 
         tarjeta.classList.add("film-card");
 
-        if (json.results[i].poster_path != "N/A")
+        if (json.results[i].poster_path != null)
             imagen.src = "https://image.tmdb.org/t/p/w500" + json.results[i].poster_path;
         else
             imagen.src = "image_not_found.png";
         titulo.textContent = json.results[i].title;
-        year.textContent = "Year: " + json.results[i].release_date;
+        desc.textContent = "Descripcion: " + json.results[i].overview;
 
         tarjeta.appendChild(ancla);
         ancla.appendChild(imagen);
         tarjeta.appendChild(titulo);
-        tarjeta.appendChild(year);
+        tarjeta.appendChild(desc);
         library.appendChild(tarjeta);   
     }} 
 
