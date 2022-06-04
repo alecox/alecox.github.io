@@ -6,7 +6,7 @@ form.addEventListener("submit", (e) => {
     fetch("http://www.omdbapi.com/?s=" + input + "&apikey=82b2d7f7")
         .then(response => response.json())
         .then(json => {
-
+            library.innerHTML = "";
             for (let i = 0; i < 10; i++) {
                 var tarjeta = document.createElement("div");
                 var ancla = document.createElement("div");
