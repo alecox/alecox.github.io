@@ -5,8 +5,7 @@
 }
 /*header-----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 .barra {
-    width: 100%;
-    height: calc(5rem + 1vh);
+    width: 100%;    
     list-style: none;
     position: fixed;
     background-color: #000;
@@ -21,14 +20,13 @@
 }
 
 .barra .buscador-container {
-    float: right;
+    float: right;    
 }
 
     .barra .buscador-container button {
         float: right;
-        padding:1vh;
-        margin-top:1vh;
-        margin-right:1vh;
+        padding: 1vh;
+        margin: 1vh 1vh 0 0;
         background: #ddd;
         font-size: calc(.7rem + 1vh);
         border: none;
@@ -39,7 +37,7 @@
     }
 .barra input[type=text] {
     padding: 1vh;
-    margin-top: 1vh;
+    margin: 1vh 0;
     font-size: calc(.7rem + 1vh);
     border: none;
 }
@@ -65,7 +63,7 @@ nav a {
 /*body-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 body {     
     display: grid;
-    grid-template-rows: 10vh 25vh 1fr 5fr 10vh;
+    grid-template-rows: 7vh auto 1fr 5fr 10vh;
     /*background-image: linear-gradient(0, #ff8eef 0, #fd7feb 16.67%, #e16ce3 33.33%, #be55d8 50%, #9840cd 66.67%, #7333c6 83.33%, #482ec2 100%);*/
     background-color: #444;
     height:99vh;
@@ -73,9 +71,7 @@ body {
 
 .descpage {
     background-color: #000;
-    display: block;
-    width: auto;
-    height: auto;
+    display: block;    
 }
     .descpage h1 {
         text-align: center;
@@ -86,13 +82,50 @@ body {
     .descpage p {
         font-size: calc(.8rem + 1vh);
         font-weight:700;
-        color: #FFF;
-        display:block;
-        width:auto;
-        height:auto;
+        color: #FFF;        
         background-color: #000;
-        padding: calc(1rem + .2vh);
+        padding: calc(.25rem + .1vh);
     }
+
+.desc-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: calc(1rem + .2vh);    
+    border-bottom: calc(2rem + 1vh) double #000;
+    border-radius: 4rem;
+}
+.desc-card-img{
+
+}
+    .desc-card-img img {
+        display: block;
+        height: calc(50rem + 3vh);
+        width: calc(30rem + 3vh);
+        margin: 0 auto;
+    }
+.desc-card-info {
+    display: flex;
+    flex-direction:column;
+}
+    .desc-card-info h2 {
+        font-size: calc(2.5rem + 1vh);
+        font-weight: 700;
+        color: #4a148c;
+        width: auto;
+        height: auto;
+        padding: calc(.25rem + .1vh);
+        
+    }
+    .desc-card-info p {
+        font-size: calc(1rem + 1vh);
+        font-weight: 700;
+        color: #FFF;
+        width: auto;
+        height: auto;
+        padding: calc(.25rem + .1vh);
+        margin: 0 calc(1rem + 1vh);
+    }
+
 .library {    
     display: flex;
     flex-direction: row;
@@ -119,9 +152,8 @@ body {
         margin: calc(.05rem + 1vh);
     }
     .film-card p {
-        font-size: calc(1rem + 1vh);
-        color: #fff;
-        margin: calc(2rem + 1vh);
+        font-size:0;
+        color:transparent;
     }
 /*fin del body-----------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -136,4 +168,121 @@ footer {
         font-size: calc(1rem + 1vh);
         color: #FFF;        
     }
-/*fin del footer---------------------------------------------------------------------------------------------------------------------------------------------------------*/  
+/*fin del footer---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 900px) {
+    .barra {
+        width: 100%;        
+        list-style: none;
+        position: fixed;
+        background-color: #000;
+    }
+
+    .btn {
+        width: calc(3rem + 1vh);
+        height: calc(3rem + 1vh);
+        background-size: calc(4rem + 1vh) calc(4rem + 1vh);
+        background-repeat: no-repeat;
+        background-position: center;
+        display: inline-block;
+        margin: calc(.1rem + .1vh);
+    }
+
+    .barra .buscador-container {
+        float: right;
+        margin:auto;
+    }
+
+        .barra .buscador-container button {
+            float: right;
+            padding: 1vh;            
+            margin: 1vh 1vh 0 0;
+            background: #ddd;
+            font-size: calc(.5rem + 1vh);
+            border: none;
+            cursor: pointer;
+        }
+
+            .barra .buscador-container button:hover {
+                background: #ccc;
+            }
+
+    .barra input[type=text] {
+        padding: 1vh; 
+        margin: 1vh 0;
+        font-size: calc(.5rem + 1vh);
+        border: none;
+    }
+
+    .descpage h1 {
+        text-align: center;
+        font-size: calc(2rem + .5vh);
+        text-shadow: 0 0 1rem #fff;
+        /*text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 55px #fff, 0 0 75px #fff, -40px -37px 9px #fff, -40px -37px 9px #fff;*/
+    }
+
+    .descpage p {
+        font-size: calc(.5rem + 1vh);
+        font-weight: 700;
+        color: #FFF;
+        background-color: #000;
+        padding: calc(.25rem + .1vh);
+    }
+
+    .desc-card {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        padding: calc(1rem + .2vh);
+        border-bottom: calc(1rem + .5vh) double #000;
+        border-radius: 4rem;
+    }
+
+    .desc-card-img {
+    }
+
+        .desc-card-img img {
+            display: block;
+            height: calc(30rem + 3vh);
+            width: calc(20rem + 3vh);
+            margin: 0 auto;
+        }
+
+    .desc-card-info h2 {
+        font-size: calc(1.6rem + 1vh);
+        font-weight: 700;
+        color: #4a148c;
+        width: auto;
+        height: auto;
+        padding: calc(.25rem + .1vh);
+    }
+
+    .desc-card-info p {
+        font-size: calc(.5rem + 1vh);
+        font-weight: 700;
+        color: #FFF;
+        width: auto;
+        height: auto;
+        padding: calc(.25rem + .1vh);
+        margin: 0 calc(1rem + 1vh);
+    }
+
+    .film-card {
+        border-radius: 3rem;
+        border: calc(.1rem + .5vh) solid #000;
+        width: calc(17rem + 3vh);
+        margin: calc(1rem + 1vh) 0;
+    }
+
+        .film-card img {
+            display: block;
+            height: calc(20rem + 3vh);
+            width: calc(10rem + 3vh);
+            margin: 0 auto
+        }
+
+        .film-card h2 {
+            font-size: calc(1rem + 1vh);
+            color: #4a148c;
+            margin: calc(.05rem + 1vh);
+        }
+}
